@@ -5,6 +5,7 @@ import authRoutes from './routes/auth.js';
 import morgan from "morgan";
 import categoryRoutes from './routes/category.js';
 import productRoutes from './routes/product.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err)=> console.log("DB Error => ", err));
 
 //middlewares
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
