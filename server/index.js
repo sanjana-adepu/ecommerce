@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/auth.js';
 import morgan from "morgan";
 import categoryRoutes from './routes/category.js';
+import productRoutes from './routes/product.js';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 //router middleware
 app.use("/api", authRoutes);
 app.use("/api", categoryRoutes);
+app.use("/api", productRoutes);
 
 const port =  process.env.PORT || 8000;
 
