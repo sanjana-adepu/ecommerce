@@ -22,7 +22,7 @@ A full-stack e-commerce website built using the MERN stack — **MongoDB, Expres
 - React.js
 - React Router
 - Axios
-- Tailwind CSS or Bootstrap
+- Bootstrap
 
 **Backend**
 - Node.js
