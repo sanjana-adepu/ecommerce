@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {Toaster} from "react-hot-toast";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Menu from "./components/nav/Menu.jsx";
-import {Toaster} from "react-hot-toast";
-
 
 export default function App() {
   return (
