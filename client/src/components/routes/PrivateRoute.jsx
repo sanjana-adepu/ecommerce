@@ -4,7 +4,7 @@ import {useAuth} from "../../context/auth.jsx";
 import Loading from "./Loading.jsx";
 import axios from 'axios';
 
-export default function PreivateRoute(){
+export default function PrivateRoute(){
     //context
     const [auth, setAuth] = useAuth();
     //state
@@ -13,20 +13,14 @@ export default function PreivateRoute(){
     useEffect(() => {
         const authCheck = async () => {
             const {data} = await axios.get(
-                `${import.meta.env.VITE_API}/auth-check`, 
-                {
-                    headers: {
-                        Authorization: auth?.token,
-                    },
-                }
-            );
+                `/auth-check`);
             if(data.ok){
                 setOk(true);
             }else{
                 setOk(false);
             }
         };
-        authCheck();
+        if (auth?.token) authCheck();
     }, [auth?.token]);
 
     // useEffect(() => {

@@ -5,7 +5,13 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Menu from "./components/nav/Menu.jsx";
 import Dashboard from "./pages/user/Dashboard.jsx";
-import PrivateRoute from './components/routes/PrivateRoute.jsx'
+import PrivateRoute from './components/routes/PrivateRoute.jsx';
+
+const PageNotFound = () => {
+  return (
+    <div className="d-flex justify-content-center align-items-center vh-100">404 | Page not found</div>
+  )
+}
 
 export default function App() {
   return (
@@ -19,6 +25,7 @@ export default function App() {
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="" element={<Dashboard />} />
         </Route>
+        <Route path="*" element={<PageNotFound/>} replace/>
       </Routes>
     </BrowserRouter>
   )
