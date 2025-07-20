@@ -4,7 +4,7 @@ import slugify from "slugify";
 export const create = async (req, res) => {
     try{
         const {name}= req.body;
-        if(!name.trim()){
+        if(name && !name.trim()){
             return res.json({error: "Name is required"});
         }
         const existingCategory = await Category.findOne({name});
