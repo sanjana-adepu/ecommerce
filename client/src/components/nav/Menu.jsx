@@ -18,6 +18,9 @@ export default function Menu() {
       <li className="nav-item">
         <NavLink className="nav-link" aria-current="page" to="/">HOME</NavLink>
       </li>
+      <li className="nav-item">
+        <NavLink className="nav-link" aria-current="page" to="/shop">SHOP</NavLink>
+      </li>
       {/* <li className="nav-item">
         <NavLink className="nav-link" aria-current="page" to="/dashboard/secret">SECRET</NavLink>
       </li> */}
