@@ -15,6 +15,7 @@ import UserOrders from "./pages/user/Orders.jsx";
 import AdminProducts from './pages/admin/Products.jsx';
 import AdminProductUpdate from './pages/admin/productUpdate.jsx';
 import Shop from './pages/Shop.jsx';
+import Search from './pages/Search.jsx';
 
 const PageNotFound = () => {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />       
         <Route path="/dashboard" element={<PrivateRoute />}>

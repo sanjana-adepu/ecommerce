@@ -1,6 +1,5 @@
 import moment from 'moment';
 import {Badge} from 'antd';
-import {useNavigate} from 'react-router-dom';
 
 export default function ProductCard({p}) {
   return (

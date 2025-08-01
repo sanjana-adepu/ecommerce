@@ -1,6 +1,7 @@
 import {NavLink} from 'react-router-dom';
 import {useAuth} from "../../context/auth.jsx";
 import {useNavigate} from "react-router-dom";
+import Search from '../forms/Search.jsx';
 
 export default function Menu() {
   //hooks
@@ -21,6 +22,8 @@ export default function Menu() {
       <li className="nav-item">
         <NavLink className="nav-link" aria-current="page" to="/shop">SHOP</NavLink>
       </li>
+
+      <Search/>
       {/* <li className="nav-item">
         <NavLink className="nav-link" aria-current="page" to="/dashboard/secret">SECRET</NavLink>
       </li> */}
