@@ -2,9 +2,13 @@ import {NavLink} from 'react-router-dom';
 import {useAuth} from "../../context/auth.jsx";
 import {useNavigate} from "react-router-dom";
 import Search from '../forms/Search.jsx';
+import useCategory from '../../hooks/useCategory.jsx';
+import {Link} from 'react-router-dom';
 
 export default function Menu() {
   //hooks
+  const {categories} = useCategory();
+  //context
   const[auth, setAuth] = useAuth();
   const navigate = useNavigate();
 
@@ -23,10 +27,31 @@ export default function Menu() {
         <NavLink className="nav-link" aria-current="page" to="/shop">SHOP</NavLink>
       </li>
 
+      <div className='dropdown'>
+        <li>
+          <a className="nav-link poiner dropdown-toggle" data-bs-toggle="dropdown">
+            Categories
+          </a>
+
+          <ul className='dropdown-menu' style={{height: '300px', overflow: 'scroll'}}>
+              <NavLink className='nav-link' to={`/categories`}>
+                All Categories
+              </NavLink>
+            {categories?.map(c => {
+              return (
+                <li key={c._id}>
+                  <NavLink className='nav-link' to={`/category/${c.slug}`}>
+                    {c.name}
+                  </NavLink>
+                </li>
+              )
+            })}
+          </ul>
+        </li>         
+      </div>
+
       <Search/>
-      {/* <li className="nav-item">
-        <NavLink className="nav-link" aria-current="page" to="/dashboard/secret">SECRET</NavLink>
-      </li> */}
+      
       {!auth?.user ? (
         <>
         <li className="nav-item">

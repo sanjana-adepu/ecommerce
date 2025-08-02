@@ -17,7 +17,7 @@ import { FaCheck,
 export default function ProductView() {
     //state
     const [product, setProduct] = useState();
-    const [related, setRelated] = useState();
+    const [related, setRelated] = useState([]);
     //hooks
     const params = useParams();
 
