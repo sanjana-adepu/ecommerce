@@ -31,7 +31,7 @@ export default function Login() {
           setAuth({...auth,token: data.token, user: data.user});
           toast.success('Login successful');
           // Use data.user.role directly instead of auth?.user?.role
-          navigate(`/dashboard/${data?.user?.role === 1 ? 'admin':'user'}`);
+          navigate(location.state || `/dashboard/${data?.user?.role === 1 ? 'admin':'user'}`);
         }
       }catch(err){
         console.log(err);

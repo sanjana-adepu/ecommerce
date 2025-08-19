@@ -62,7 +62,7 @@ export default function Home() {
           <h2 className='p-3 mt-2 mb-2 h4 bg-light text-center'>New arrivals</h2>
           <div className='row'>
             {products?.map(p => (
-            <div className='col-md-6'>
+            <div key={p._id} className='col-md-6'>
               <ProductCard p ={p}/>
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function Home() {
           <h2 className='p-3 mt-2 mb-2 h4 bg-light text-center'>Best Sellers</h2>
           <div className='row'>
             {products?.map(p => (
-            <div className='col-md-6'>
+            <div className='col-md-6' key={p._id}>
               <ProductCard p ={p}/>
             </div>
           ))}

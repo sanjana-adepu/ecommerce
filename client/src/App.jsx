@@ -19,6 +19,7 @@ import Search from './pages/Search.jsx';
 import ProductView from './pages/ProductView.jsx';
 import CategoriesList from './pages/CategoriesList.jsx';
 import CategoryView from './pages/CategoryView.jsx';
+import Cart from './pages/Cart.jsx';
 
 const PageNotFound = () => {
   return (
@@ -30,10 +31,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <Menu/>
-      <Toaster/>
+      <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/categories" element={<CategoriesList />} />
         <Route path="/category/:slug" element={<CategoryView />} />
         <Route path="/search" element={<Search />} />
