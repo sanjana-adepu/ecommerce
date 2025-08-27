@@ -12,8 +12,11 @@ export default function PrivateRoute(){
 
     useEffect(() => {
         const authCheck = async () => {
-            const {data} = await axios.get(
-                `/auth-check`);
+            const { data } = await axios.get("/auth-check", {
+            headers: {
+                Authorization: auth?.token,   // or `Bearer ${auth?.token}`
+            },
+            });
             if(data.ok){
                 setOk(true);
             }else{
@@ -31,5 +34,5 @@ export default function PrivateRoute(){
     //     }
     // }, [auth?.token]);
 
-    return ok ? <Outlet/> : <Loading path='user'/> ;
+    return ok ? <Outlet/> : <Loading path='login'/> ;
 };

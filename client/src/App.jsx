@@ -42,18 +42,20 @@ export default function App() {
         <Route path="/product/:slug" element={<ProductView />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />       
-        <Route path="/dashboard" element={<PrivateRoute />}>
+        <Route path="/dashboard">
+        <Route element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
           <Route path="user/profile" element={<UserProfile />} />
           <Route path="user/orders" element={<UserOrders />} />
-        </Route>       
-        <Route path="/dashboard" element={<AdminRoute />}>
+        </Route>
+        <Route element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashboard />} />
           <Route path="admin/category" element={<AdminCategory />} />
           <Route path="admin/product" element={<AdminProduct />} />
           <Route path="admin/products" element={<AdminProducts />} />
           <Route path="admin/product/update/:slug" element={<AdminProductUpdate />} />
         </Route>
+      </Route>
         <Route path="*" element={<PageNotFound/>} replace/>
       </Routes>
     </BrowserRouter>

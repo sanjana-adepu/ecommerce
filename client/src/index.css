@@ -3,6 +3,11 @@
   text-decoration-thickness: 5px !important;
 }
 
+.braintree-dropin {
+  width: 100% !important;
+  min-height: 300px !important;
+}
+
 .pointer {
   cursor: pointer;
 }

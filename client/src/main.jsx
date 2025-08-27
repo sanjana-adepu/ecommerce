@@ -7,7 +7,6 @@ import { SearchProvider } from './context/search.jsx';
 import { CartProvider } from './context/cart.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <AuthProvider>
       <SearchProvider>
         <CartProvider>
@@ -15,5 +14,4 @@ createRoot(document.getElementById('root')).render(
         </CartProvider>
       </SearchProvider>
     </AuthProvider>
-  </StrictMode>,
 )

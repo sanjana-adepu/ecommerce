@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sanjana-adepu/ecommerce-server#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "braintree": "^3.33.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
